@@ -1,0 +1,20 @@
+1. 1st add web in Firebase
+2. Then flow the process
+https://firebase.google.com/docs/flutter/setup?platform=ios
+
+or 
+
+https://firebase.flutter.dev/docs/manual-installation/web
+
+For install flutterfire
+https://firebase.flutter.dev/docs/cli/
+
+
+For show image run this commend
+$flutter run -d chrome --web-renderer html
+or
+Add this code in index.html
+  <script>
+    // The value below is injected by flutter build, do not touch.
+    const serviceWorkerVersion = null;
+  </script>

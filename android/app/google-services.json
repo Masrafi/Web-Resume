@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "703989381905",
+    "project_id": "resume-data-d054d",
+    "storage_bucket": "resume-data-d054d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:703989381905:android:99fa0620ffa4adba076ab0",
+        "android_client_info": {
+          "package_name": "com.masrafi.resume"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfXQ55hJ8pi9W6JmwVeG_IbmaiPMI5EO8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
