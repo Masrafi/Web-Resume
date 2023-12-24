@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../widgets/app_text_style.dart';
 import '../bloc/train_bloc.dart';
 import '../bloc/train_state.dart';
 import '../model/train_model.dart';
@@ -23,9 +24,15 @@ class TrainScreen extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Text(data[index].title, ),
-                       Text(data[index].name, ),
-                       Text(data[index].address, ),
+                       SizedBox(height: 15,),
+                       Row(
+                         children: [
+                           Text((index+1).toString(), style: AppTextStyle.introTextStyle(),),
+                           Text('. ${data[index].title}', style: AppTextStyle.introTextStyle(),),
+                         ],
+                       ),
+                       Text('    ${data[index].name}', ),
+                       Text('    ${data[index].address}', ),
                       
                      ],
                      );

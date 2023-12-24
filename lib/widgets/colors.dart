@@ -37,3 +37,4 @@ const Color GREEN_COLOR = Color(0xff1d8c44);
 const Color LIGHT_GREEN_COLOR = Color(0xff87bd42);
 const Color ORANGE_COLOR = Color(0xffed8f27);
 const Color PINK_COLOR = Color(0xffff1493);
+const Color TITLECOLOR = Color(0xff0a55a4);

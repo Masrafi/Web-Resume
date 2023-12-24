@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../widgets/constant/app_box_decoration.dart';
 import '../bloc/ref_bloc.dart';
 import '../bloc/ref_state.dart';
 import '../model/ref_model.dart';
@@ -14,21 +15,39 @@ class RefScreen extends StatelessWidget {
                builder: (context, state) {
                  if(state is RefLoaded) {
                    List<RefModel> data = state.mydata;
-                   return ListView.builder(
-                   physics: const NeverScrollableScrollPhysics(),
+                   return GridView.builder(
                    shrinkWrap: true,
-                   itemCount:  data.length,
-                   itemBuilder: (_, index) {
-                     return Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text(data[index].name,),
-                       Text(data[index].email,),
-                       Text(data[index].phone,),
-                       Text(data[index].degic,),
-                       Text(data[index].organization,),
-                     ],
+                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 5.0,
+                            childAspectRatio: 3.8,
+                            //crossAxisSpacing: 10.0,
+                            ),
+                        padding: EdgeInsets.zero,
+                        itemCount: data.length,
+                         itemBuilder: (_,  index) {
+                     return Align(
+                                alignment: Alignment.topLeft,
+                       child: UnconstrainedBox(
+                         child: Container(
+                         width: 600,
+                         height: 180,
+                         //margin: EdgeInsets.only(bottom: 15),
+                         padding: EdgeInsets.all(15),
+                         decoration: AppBoxDecoration.commonDecoration,
+                           child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text(data[index].name,),
+                             Text(data[index].email,),
+                             Text(data[index].phone,),
+                             Text(data[index].degic,),
+                             Text(data[index].organization,),
+                           ],
+                           ),
+                         ),
+                       ),
                      );
                    },
                    );

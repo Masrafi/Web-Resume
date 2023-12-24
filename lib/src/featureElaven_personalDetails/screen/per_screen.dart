@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/widgets/show_screen.dart';
 
 import '../bloc/per_bloc.dart';
 import '../bloc/per_state.dart';
@@ -19,23 +20,48 @@ class PerScreen extends StatelessWidget {
                    shrinkWrap: true,
                    itemCount:  data.length,
                    itemBuilder: (_, index) {
-                     return Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text(data[index].f_name,),
-                       Text(data[index].m_name,),
-                       Text(data[index].d_birth,),
-                       Text(data[index].gender,),
-                       Text(data[index].m_status,),
-                       Text(data[index].nationality,),
-                       Text(data[index].nid,),
-                       Text(data[index].religion,),
-                       Text(data[index].a_permanent,),
-                       Text(data[index].a_persent,),
-                       
-                     
-                     ],
+                     return Align(
+                                                   alignment: Alignment.topRight,
+                       child: UnconstrainedBox(
+                         child: Container(
+                         width: 650,
+                         height: 250,
+                          margin: EdgeInsets.only(bottom: 15),
+                         padding: EdgeInsets.all(15),
+                         decoration: BoxDecoration(
+                         //border: Border.all(),
+                         color: Colors.white,
+                         borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                               BoxShadow(
+                                 color: Colors.black
+                                     .withOpacity(0.03),
+                                 spreadRadius: 1,
+                                 blurRadius: 5,
+                                 offset: Offset(0,
+                                     0), // changes position of shadow
+                               ),
+                             ],
+                       ),
+                           child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             ShowScreen(title: 'Father Name: ', head: data[index].f_name,),
+                             ShowScreen(title: 'Mother Name: ', head: data[index].m_name,),
+                             ShowScreen(title: 'Date of Birth: ', head: data[index].d_birth,),
+                             ShowScreen(title: 'Gender: ', head: data[index].gender,),
+                             ShowScreen(title: 'Nationality: ', head: data[index].nationality,),
+                             ShowScreen(title: 'NID: ', head: data[index].nid,),
+                             ShowScreen(title: 'Religion: ', head: data[index].religion,),
+                             ShowScreen(title: 'Permanent Address: ', head: data[index].a_permanent,),
+                             ShowScreen(title: 'Present Address: ', head: data[index].a_persent,),
+                          
+                           
+                           ],
+                           ),
+                         ),
+                       ),
                      );
                    },
                    );

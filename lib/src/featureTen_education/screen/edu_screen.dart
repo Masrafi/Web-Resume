@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/widgets/app_divider.dart';
 
+import '../../../widgets/app_text_style.dart';
 import '../bloc/edu_bloc.dart';
 import '../bloc/edu_state.dart';
 import '../model/edu_model.dart';
@@ -15,6 +17,7 @@ class EduScreen extends StatelessWidget {
                  if(state is EduLoaded) {
                    List<EduModel> data = state.mydata;
                    return ListView.builder(
+                   padding: EdgeInsets.only(top: 30),
                    physics: const NeverScrollableScrollPhysics(),
                    shrinkWrap: true,
                    itemCount:  data.length,
@@ -23,13 +26,38 @@ class EduScreen extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Text(data[index].degree,),
-                       Text(data[index].group,),
-                       Text(data[index].institution,),
-                       Text(data[index].grade,),
-                       Text(data[index].year,),
-                      
-                     
+                       // Row(
+                       //   children: [
+                       //     Text('Degree', style: AppTextStyle.introTextStyle(),),
+                       //     Text('Major Subject / group', style: AppTextStyle.introTextStyle(),),
+                       //     Text('Institution', style: AppTextStyle.introTextStyle(),),
+                       //     Text('Grade/ CGPA', style: AppTextStyle.introTextStyle(),),
+                       //     Text('Passing Year', style: AppTextStyle.introTextStyle(),),
+                       //    
+                       //   ],
+                       // ),
+                       AppDividerBlack(),
+                       SizedBox(height: 5,),
+                       Row(
+                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                         children: [
+                           AppDividerWid(),
+                           Expanded(child: Text(data[index].degree, style: index == 0 ? AppTextStyle.introTextStyle():TextStyle(),)),
+                           AppDividerWid(),
+                           Expanded(child: Text(data[index].group, style: index == 0 ? AppTextStyle.introTextStyle():TextStyle(),)),
+                           AppDividerWid(),
+                           Expanded(child: Text(data[index].institution, style: index == 0 ? AppTextStyle.introTextStyle():TextStyle(),)),
+                           AppDividerWid(),
+                           Expanded(child: Text(data[index].grade, style: index == 0 ? AppTextStyle.introTextStyle():TextStyle(),)),
+                           AppDividerWid(),
+                           Expanded(child: Text(data[index].year, style: index == 0 ? AppTextStyle.introTextStyle():TextStyle(),)),
+                           
+                         ],
+                       ),
+                     SizedBox(height: 5,),
+                     if (index == data.length -1)
+                     AppDividerBlack(),
+                       
                      ],
                      );
                    },

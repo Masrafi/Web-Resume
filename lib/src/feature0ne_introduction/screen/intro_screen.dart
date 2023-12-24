@@ -37,7 +37,8 @@ class _IntroScreenState extends State<IntroScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ImageView(),
-            Text(data[index].name, style: AppTextStyle.highlightsTextStyle(),),
+            SizedBox(height: 15,),
+            Text(data[index].name, style: AppTextStyle.nameStyle(),),
             IntroBody(head: 'Mobile',title: data[index].mobile,),
             IntroBodyUrl(head: 'Email',title: data[index].email,),
             IntroBodyUrl(head: 'Skype',title: data[index].skype,),
