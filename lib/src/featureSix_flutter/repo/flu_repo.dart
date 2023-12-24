@@ -9,7 +9,7 @@ class FluRepo {
 
   List<FluModel> proList=[];
   try {
-  final pro= await FirebaseFirestore.instance.collection("FLUTTER").get();
+  final pro= await FirebaseFirestore.instance.collection("TECHNICAL SKILLS").get();
   pro.docs.forEach((element) {
   return proList.add(FluModel.fromJson(element.data()));
   }) ;

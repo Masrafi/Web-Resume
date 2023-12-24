@@ -4,7 +4,7 @@ final String company_name;
 final String duration;
 final String position;
 final String products;
-final String responsibilities;
+final Responsibilities responsibilities;
 
 WorkModel({
 required this.company_name,
@@ -20,7 +20,24 @@ company_name: json['company_name'] ,
 duration: json['duration'],
 position: json['position'],
 products: json['products'],
-responsibilities: json['responsibilities'],
+responsibilities: Responsibilities.fromJson(json['responsibilities']),
 );
 }
+}
+
+class Responsibilities{
+  final String a;
+  final String b;
+  final String c;
+  final String d;
+  final String e;
+  Responsibilities({required this.a, required this.b, required this.c, required this.d, required this.e});
+
+factory Responsibilities.fromJson(Map<dynamic, dynamic> json) => Responsibilities(
+   a: json['a'],
+   b: json['b'],
+   c: json['c'],
+   d: json['d'],
+   e: json['e'],
+  );
 }

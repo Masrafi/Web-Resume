@@ -4,6 +4,8 @@ import 'package:resume/src/featureTherteen_certification/bloc/cer_bloc.dart';
 import 'package:resume/src/featureTherteen_certification/bloc/cer_state.dart';
 import 'package:resume/src/featureTherteen_certification/model/cer_model.dart';
 
+import '../../../widgets/app_text_style.dart';
+
 class CertScreen extends StatelessWidget {
   const CertScreen({super.key});
 
@@ -22,8 +24,9 @@ class CertScreen extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       Text(data[index].title,),
-                       Text(data[index].name,),
+                       Text(data[index].title, ),
+                       SizedBox(height: 20,),
+                       Text(data[index].name, style: AppTextStyle.introTextStyle(),),
                      
                      ],
                      );

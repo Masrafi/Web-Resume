@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../widgets/show_screen.dart';
 import '../bloc/other_bloc.dart';
 import '../bloc/other_state.dart';
 import '../model/other_model.dart';
@@ -19,21 +20,47 @@ class OtherScreen extends StatelessWidget {
                    shrinkWrap: true,
                    itemCount:  data.length,
                    itemBuilder: (_, index) {
-                     return Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Text(data[index].swift,),
-                       Text(data[index].database,),
-                       Text(data[index].third_party,),
-                       Text(data[index].ide,),
-                       Text(data[index].app_work,),
-                       Text(data[index].team_prac,),
-                       Text(data[index].pro_manag,),
-                       Text(data[index].sof_metho,),
-                       Text(data[index].others,),
-                       
-                     ],
+                     return Align(
+                       alignment: Alignment.topLeft,
+                       child: UnconstrainedBox(
+                           child: Container(
+                           width: 650,
+                            height: 400,
+                             margin: EdgeInsets.only(bottom: 15),
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                            //border: Border.all(),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                             boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black
+                                        .withOpacity(0.03),
+                                    spreadRadius: 1,
+                                    blurRadius: 5,
+                                    offset: Offset(0,
+                                        0), // changes position of shadow
+                                  ),
+                                ],
+                          ),
+                           child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             ShowScreen(title: 'Swift: ', head: data[index].swift,),
+                             ShowScreen(title: 'Database: ', head: data[index].database,),
+                             ShowScreen(title: 'Third Party: ', head: data[index].third_party,),
+                             ShowScreen(title: 'IDE: ', head: data[index].ide,),
+                             ShowScreen(title: 'App for Work: ', head: data[index].app_work,),
+                             ShowScreen(title: 'Team Participant: ', head: data[index].team_prac,),
+                             ShowScreen(title: 'Project Management: ', head: data[index].pro_manag,),
+                             ShowScreen(title: 'Software Development Methodologies: ', head: data[index].sof_metho,),
+                             ShowScreen(title: 'Others: ', head: data[index].others,),
+                             
+                           ],
+                           ),
+                         ),
+                       ),
                      );
                    },
                    );
