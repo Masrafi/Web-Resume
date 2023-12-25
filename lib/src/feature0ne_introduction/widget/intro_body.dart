@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_text_style.dart';
 
 class IntroBody extends StatelessWidget {
   const IntroBody({super.key, required this.title, required this.head});

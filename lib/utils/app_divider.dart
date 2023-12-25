@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:resume/widgets/app_text_style.dart';
-import 'package:resume/widgets/colors.dart';
+import 'package:resume/utils/app_text_style.dart';
+import 'package:resume/utils/colors.dart';
 
 class AppDivider extends StatelessWidget {
   const AppDivider({super.key});

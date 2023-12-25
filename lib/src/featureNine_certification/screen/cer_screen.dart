@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_text_style.dart';
 import '../bloc/cer_bloc.dart';
 import '../bloc/cer_state.dart';
 import '../model/cer_model.dart';

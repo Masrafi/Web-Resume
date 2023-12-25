@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/src/featureThree_workExperiance/widget/show_case.dart';
-import 'package:resume/widgets/show_screen.dart';
+import 'package:resume/utils/show_screen.dart';
 
-import '../../../widgets/app_text_style.dart';
-import '../../../widgets/colors.dart';
+import '../../../utils/app_text_style.dart';
+import '../../../utils/colors.dart';
 import '../bloc/work_bloc.dart';
 import '../bloc/work_state.dart';
 import '../model/work_model.dart';

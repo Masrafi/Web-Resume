@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../widgets/constant/app_box_decoration.dart';
+import '../../../utils/app_text_style.dart';
+import '../../../utils/constant/app_box_decoration.dart';
 import '../bloc/ref_bloc.dart';
 import '../bloc/ref_state.dart';
 import '../model/ref_model.dart';
@@ -39,7 +40,7 @@ class RefScreen extends StatelessWidget {
                            mainAxisAlignment: MainAxisAlignment.start,
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                             Text(data[index].name,),
+                             Text(data[index].name,  style: AppTextStyle.introTextStyle(),),
                              Text(data[index].email,),
                              Text(data[index].phone,),
                              Text(data[index].degic,),

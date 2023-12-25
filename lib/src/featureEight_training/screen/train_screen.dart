@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_text_style.dart';
 import '../bloc/train_bloc.dart';
 import '../bloc/train_state.dart';
 import '../model/train_model.dart';

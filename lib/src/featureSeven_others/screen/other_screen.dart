@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../widgets/show_screen.dart';
+import '../../../utils/show_screen.dart';
 import '../bloc/other_bloc.dart';
 import '../bloc/other_state.dart';
 import '../model/other_model.dart';
@@ -47,15 +47,15 @@ class OtherScreen extends StatelessWidget {
                            mainAxisAlignment: MainAxisAlignment.start,
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                             ShowScreen(title: 'Swift: ', head: data[index].swift,),
-                             ShowScreen(title: 'Database: ', head: data[index].database,),
-                             ShowScreen(title: 'Third Party: ', head: data[index].third_party,),
-                             ShowScreen(title: 'IDE: ', head: data[index].ide,),
-                             ShowScreen(title: 'App for Work: ', head: data[index].app_work,),
-                             ShowScreen(title: 'Team Participant: ', head: data[index].team_prac,),
-                             ShowScreen(title: 'Project Management: ', head: data[index].pro_manag,),
-                             ShowScreen(title: 'Software Development Methodologies: ', head: data[index].sof_metho,),
-                             ShowScreen(title: 'Others: ', head: data[index].others,),
+                             ShowScreen(title: 'Swift: ', head: data[index].swift, style: TextStyle(),),
+                             ShowScreen(title: 'Database: ', head: data[index].database, style: TextStyle(),),
+                             ShowScreen(title: 'Third Party: ', head: data[index].third_party, style: TextStyle(),),
+                             ShowScreen(title: 'IDE: ', head: data[index].ide, style: TextStyle(),),
+                             ShowScreen(title: 'App for Work: ', head: data[index].app_work, style: TextStyle(),),
+                             ShowScreen(title: 'Team Participant: ', head: data[index].team_prac, style: TextStyle(),),
+                             ShowScreen(title: 'Project Management: ', head: data[index].pro_manag, style: TextStyle(),),
+                             ShowScreen(title: 'Software Development Methodologies: ', head: data[index].sof_metho, style: TextStyle(),),
+                             ShowScreen(title: 'Others: ', head: data[index].others, style: TextStyle(),),
                              
                            ],
                            ),

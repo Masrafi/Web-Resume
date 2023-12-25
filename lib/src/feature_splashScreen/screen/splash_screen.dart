@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/widgets/app_text_style.dart';
+import 'package:resume/utils/app_text_style.dart';
 
 import '../bloc/splash_bloc.dart';
 import '../bloc/splash_event.dart';

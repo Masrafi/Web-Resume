@@ -30,5 +30,11 @@ class AppTextStyle {
             fontWeight: FontWeight.w600,
             color: TITLECOLOR,
           );
+   static TextStyle aboutTextStyle() => const TextStyle(
+               fontSize: 14,
+               fontWeight: FontWeight.w600,
+               fontStyle: FontStyle.italic,
+               color: TITLECOLOR,
+             );
   
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../widgets/app_divider.dart';
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_divider.dart';
+import '../../../utils/app_text_style.dart';
 import '../bloc/flu_bloc.dart';
 import '../bloc/flu_state.dart';
 import '../model/flu_model.dart';

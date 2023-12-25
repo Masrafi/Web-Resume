@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'firebase_options.dart';
 import 'src/feature_splashScreen/bloc/splash_bloc.dart';
 import 'src/feature_splashScreen/screen/splash_screen.dart';
-import 'widgets/route.dart';
+import 'utils/route.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
