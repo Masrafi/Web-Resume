@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../widgets/link_screen.dart';
-import '../../../widgets/show_screen.dart';
+import 'package:resume/utils/link_widget.dart';
+import '../../../utils/app_text_style.dart';
+import '../../../utils/show_screen.dart';
 import '../bloc/workEx_bloc.dart';
 import '../bloc/workEx_state.dart';
 import '../model/workEx_model.dart';
@@ -49,9 +49,9 @@ class WorkExScreen extends StatelessWidget {
                              mainAxisAlignment: MainAxisAlignment.start,
                              crossAxisAlignment: CrossAxisAlignment.start,
                              children: [
-                             ShowScreen(title: 'Name: ', head: data[index].name,),
-                             LinkScreen(title: 'App Store Link: ', head: data[index].app_store,),
-                             LinkScreen(title: 'Play Store Link: ', head: data[index].play_store,),
+                             ShowScreen(title: 'Name: ', head: data[index].name, style: TextStyle(),),
+                             LinkWidget(link: data[index].app_store,child: ShowScreen(title: 'App Store Link: ', head: data[index].app_store, style: AppTextStyle.linkTextStyle())),
+                             LinkWidget(link: data[index].play_store,child: ShowScreen(title: 'Play Store Link: ', head: data[index].play_store, style: AppTextStyle.linkTextStyle())),
                              ],
                              ),
                            ),

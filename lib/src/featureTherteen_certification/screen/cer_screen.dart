@@ -4,7 +4,7 @@ import 'package:resume/src/featureTherteen_certification/bloc/cer_bloc.dart';
 import 'package:resume/src/featureTherteen_certification/bloc/cer_state.dart';
 import 'package:resume/src/featureTherteen_certification/model/cer_model.dart';
 
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_text_style.dart';
 
 class CertScreen extends StatelessWidget {
   const CertScreen({super.key});

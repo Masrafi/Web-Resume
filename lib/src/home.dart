@@ -31,9 +31,10 @@ import 'package:resume/src/featureTwelve_referance/bloc/ref_event.dart';
 import 'package:resume/src/featureTwelve_referance/screen/ref_screen.dart';
 import 'package:resume/src/featureTwo_objective/bloc/objective_bloc.dart';
 import 'package:resume/src/featureTwo_objective/bloc/objective_event.dart';
-import 'package:resume/widgets/app_text_style.dart';
+import 'package:resume/utils/app_text_style.dart';
 
-import '../widgets/app_divider.dart';
+import '../utils/app_divider.dart';
+import '../utils/colors.dart';
 import 'feature0ne_introduction/bloc/intro_bloc.dart';
 import 'feature0ne_introduction/bloc/intro_event.dart';
 import 'feature0ne_introduction/repo/intro_repo.dart';
@@ -55,6 +56,11 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final GlobalKey globalKeyOne = GlobalKey();
+  final GlobalKey globalKeyTwo = GlobalKey();
+  final GlobalKey globalKeyThree = GlobalKey();
+  final GlobalKey globalKeyFour = GlobalKey();
+  
   @override
     void initState() {
       // TODO: implement initState
@@ -135,12 +141,12 @@ class _HomeState extends State<Home> {
       SizedBox(height: 10,),
       RefScreen(),
       SizedBox(height: 30,),
-      Text(''),
       Text('CERTIFICATION', style: AppTextStyle.highlightsTextStyle(),),
       AppDivider(),
       SizedBox(height: 10,),
       CertScreen(),
       SizedBox(height: 30,),
+      Text('Info: This portfolio made with Flutter, Dart and Firebase. This is not full responsive. So, this website should need to open in full windows.')
     ],
     )
    // )

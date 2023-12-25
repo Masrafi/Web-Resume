@@ -4,7 +4,7 @@ import 'package:resume/src/feature0ne_introduction/bloc/intro_bloc.dart';
 import 'package:resume/src/feature0ne_introduction/bloc/intro_state.dart';
 import 'package:resume/src/feature0ne_introduction/model/intro_model.dart';
 import 'package:resume/src/feature0ne_introduction/widget/url_lancer.dart';
-import 'package:resume/widgets/app_text_style.dart';
+import 'package:resume/utils/app_text_style.dart';
 import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
 import '../widget/into_body_url.dart';
 import 'image/database_manager.dart';
@@ -40,7 +40,7 @@ class _IntroScreenState extends State<IntroScreen> {
             SizedBox(height: 15,),
             Text(data[index].name, style: AppTextStyle.nameStyle(),),
             IntroBody(head: 'Mobile',title: data[index].mobile,),
-            IntroBodyUrl(head: 'Email',title: data[index].email,),
+            IntroBody(head: 'Email',title: data[index].email,),
             IntroBodyUrl(head: 'Skype',title: data[index].skype,),
             IntroBodyUrl(head: 'LinkDin',title: data[index].linkedIn,),
             

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../widgets/app_text_style.dart';
+import '../../../utils/app_text_style.dart';
 
 class IntroBodyUrl extends StatelessWidget {
   const IntroBodyUrl({super.key, required this.title, required this.head});
@@ -13,7 +13,7 @@ class IntroBodyUrl extends StatelessWidget {
          children: [
            Text('${head}: ', style: AppTextStyle.introTextStyle(),),
            GestureDetector(
-           child: Text(title),
+           child: Text(title, style: AppTextStyle.linkTextStyle(),),
                onTap: () async{
                     if (await canLaunch(title)) {
                       await launch(title);

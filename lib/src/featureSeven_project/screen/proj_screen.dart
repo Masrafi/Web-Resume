@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/utils/link_widget.dart';
 
-import '../../../widgets/app_text_style.dart';
-import '../../../widgets/constant/app_box_decoration.dart';
+import '../../../utils/app_text_style.dart';
+import '../../../utils/constant/app_box_decoration.dart';
 import '../bloc/proj_bloc.dart';
 import '../bloc/proj_state.dart';
 import '../model/proj_model.dart';
@@ -41,7 +42,7 @@ class ProjScreen extends StatelessWidget {
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
                              Text(data[index].title, style: AppTextStyle.introTextStyle(),),
-                             Text(data[index].link,),
+                             LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
                              
                            
                            ],

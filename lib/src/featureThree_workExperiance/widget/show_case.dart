@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:resume/widgets/constant/app_box_decoration.dart';
+import 'package:resume/utils/constant/app_box_decoration.dart';
 
-import '../../../widgets/app_text_style.dart';
-import '../../../widgets/show_screen.dart';
+import '../../../utils/app_text_style.dart';
+import '../../../utils/show_screen.dart';
 
 class ShowCase extends StatelessWidget {
   final String company_name;
@@ -32,10 +32,10 @@ class ShowCase extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-               ShowScreen(title: 'Company Name: ', head: company_name),
-               ShowScreen(title: 'Duration: ', head: duration),
-               ShowScreen(title: 'Position: ', head: position),
-               ShowScreen(title: 'Product: ', head: products),
+               ShowScreen(title: 'Company Name: ', head: company_name, style: TextStyle(),),
+               ShowScreen(title: 'Duration: ', head: duration, style: TextStyle(),),
+               ShowScreen(title: 'Position: ', head: position, style: TextStyle(),),
+               ShowScreen(title: 'Product: ', head: products, style: TextStyle(),),
                //ShowScreen(title: 'Responsibility: ', head: data[index].responsibilities.a),
                Row(
                mainAxisAlignment: MainAxisAlignment.start,

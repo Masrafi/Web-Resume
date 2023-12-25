@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/widgets/show_screen.dart';
+import 'package:resume/utils/show_screen.dart';
 
 import '../bloc/per_bloc.dart';
 import '../bloc/per_state.dart';
@@ -47,15 +47,15 @@ class PerScreen extends StatelessWidget {
                            mainAxisAlignment: MainAxisAlignment.start,
                            crossAxisAlignment: CrossAxisAlignment.start,
                            children: [
-                             ShowScreen(title: 'Father Name: ', head: data[index].f_name,),
-                             ShowScreen(title: 'Mother Name: ', head: data[index].m_name,),
-                             ShowScreen(title: 'Date of Birth: ', head: data[index].d_birth,),
-                             ShowScreen(title: 'Gender: ', head: data[index].gender,),
-                             ShowScreen(title: 'Nationality: ', head: data[index].nationality,),
-                             ShowScreen(title: 'NID: ', head: data[index].nid,),
-                             ShowScreen(title: 'Religion: ', head: data[index].religion,),
-                             ShowScreen(title: 'Permanent Address: ', head: data[index].a_permanent,),
-                             ShowScreen(title: 'Present Address: ', head: data[index].a_persent,),
+                             ShowScreen(title: 'Father Name: ', head: data[index].f_name, style: TextStyle(),),
+                             ShowScreen(title: 'Mother Name: ', head: data[index].m_name, style: TextStyle(),),
+                             ShowScreen(title: 'Date of Birth: ', head: data[index].d_birth, style: TextStyle(),),
+                             ShowScreen(title: 'Gender: ', head: data[index].gender, style: TextStyle(),),
+                             ShowScreen(title: 'Nationality: ', head: data[index].nationality, style: TextStyle(),),
+                             ShowScreen(title: 'NID: ', head: data[index].nid, style: TextStyle(),),
+                             ShowScreen(title: 'Religion: ', head: data[index].religion, style: TextStyle(),),
+                             ShowScreen(title: 'Permanent Address: ', head: data[index].a_permanent, style: TextStyle(),),
+                             ShowScreen(title: 'Present Address: ', head: data[index].a_persent, style: TextStyle(),),
                           
                            
                            ],
