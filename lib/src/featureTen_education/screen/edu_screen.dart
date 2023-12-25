@@ -26,16 +26,6 @@ class EduScreen extends StatelessWidget {
                      mainAxisAlignment: MainAxisAlignment.start,
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
-                       // Row(
-                       //   children: [
-                       //     Text('Degree', style: AppTextStyle.introTextStyle(),),
-                       //     Text('Major Subject / group', style: AppTextStyle.introTextStyle(),),
-                       //     Text('Institution', style: AppTextStyle.introTextStyle(),),
-                       //     Text('Grade/ CGPA', style: AppTextStyle.introTextStyle(),),
-                       //     Text('Passing Year', style: AppTextStyle.introTextStyle(),),
-                       //    
-                       //   ],
-                       // ),
                        AppDividerBlack(),
                        SizedBox(height: 5,),
                        Row(

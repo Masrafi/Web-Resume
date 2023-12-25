@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/utils/frame.dart';
 
 import '../../../utils/app_text_style.dart';
 import '../../../utils/constant/app_box_decoration.dart';
