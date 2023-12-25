@@ -11,9 +11,6 @@ import 'package:resume/src/featureFive_language/bloc/language_bloc.dart';
 import 'package:resume/src/featureFive_language/bloc/language_event.dart';
 import 'package:resume/src/featureNine_certification/bloc/cer_bloc.dart';
 import 'package:resume/src/featureNine_certification/bloc/cer_event.dart';
-import 'package:resume/src/featureSeven_others/bloc/other_bloc.dart';
-import 'package:resume/src/featureSeven_others/bloc/other_event.dart';
-import 'package:resume/src/featureSeven_others/screen/other_screen.dart';
 import 'package:resume/src/featureSeven_project/bloc/proj_bloc.dart';
 import 'package:resume/src/featureSeven_project/bloc/proj_event.dart';
 import 'package:resume/src/featureSeven_project/screen/proj_screen.dart';
@@ -71,7 +68,6 @@ class _HomeState extends State<Home> {
       BlocProvider.of<WorkExBloc>(context).add(WorkExGetData());
       BlocProvider.of<LanguageBloc>(context).add(LanguageGetData());
       BlocProvider.of<FluBloc>(context).add(FluGetData());
-      BlocProvider.of<OtherBloc>(context).add(OtherGetData());
       BlocProvider.of<ProjBloc>(context).add(ProjGetData());
       BlocProvider.of<TrainBloc>(context).add(TrainGetData());
       BlocProvider.of<CerBloc>(context).add(CerGetData());

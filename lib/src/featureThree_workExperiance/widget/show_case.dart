@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:resume/utils/constant/app_box_decoration.dart';
+import 'package:resume/utils/frame.dart';
 
 import '../../../utils/app_text_style.dart';
 import '../../../utils/show_screen.dart';

@@ -5,6 +5,7 @@ import '../../../utils/app_text_style.dart';
 import '../bloc/train_bloc.dart';
 import '../bloc/train_state.dart';
 import '../model/train_model.dart';
+import '../widget/train_widget.dart';
 
 class TrainScreen extends StatelessWidget {
   const TrainScreen({super.key});
@@ -20,22 +21,7 @@ class TrainScreen extends StatelessWidget {
                    shrinkWrap: true,
                    itemCount:  data.length,
                    itemBuilder: (_, index) {
-                     return Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       SizedBox(height: 15,),
-                       Row(
-                         children: [
-                           Text((index+1).toString(), style: AppTextStyle.introTextStyle(),),
-                           Text('. ${data[index].title}', style: AppTextStyle.introTextStyle(),),
-                         ],
-                       ),
-                       Text('    ${data[index].name}', ),
-                       Text('    ${data[index].address}', ),
-                      
-                     ],
-                     );
+                     return TrainWidget(num: index+1, title: data[index].title, name: data[index].name, address: data[index].address,);
                    },
                    );
                  } else if(state is TrainLoading) {

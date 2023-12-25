@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/utils/frame.dart';
 import 'package:resume/utils/link_widget.dart';
 
 import '../../../utils/app_text_style.dart';
@@ -28,27 +29,18 @@ class ProjScreen extends StatelessWidget {
                         padding: EdgeInsets.zero,
                         itemCount: data.length,
                          itemBuilder: (_,  index) {
-                     return Align(
-                       alignment: Alignment.topLeft,
-                       child: UnconstrainedBox(
-                         child: Container(
-                         width: 600,
-                         height: 100,
-                         //margin: EdgeInsets.only(bottom: 15),
-                         padding: EdgeInsets.all(15),
-                         decoration: AppBoxDecoration.commonDecoration,
-                           child: Column(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text(data[index].title, style: AppTextStyle.introTextStyle(),),
-                             LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
-                             
-                           
-                           ],
-                           ),
+                     return Frame(
+                     alignment: Alignment.topLeft,
+                     height: 100,
+                       width: 600,
+                       child: Column(
+                         mainAxisAlignment: MainAxisAlignment.start,
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                         children: [
+                           Text(data[index].title, style: AppTextStyle.introTextStyle(),),
+                           LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
+                         ],
                          ),
-                       ),
                      );
                    },
                    );

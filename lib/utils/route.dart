@@ -10,8 +10,6 @@ import 'package:resume/src/featureFive_language/bloc/language_bloc.dart';
 import 'package:resume/src/featureFive_language/repo/language_repo.dart';
 import 'package:resume/src/featureNine_certification/bloc/cer_bloc.dart';
 import 'package:resume/src/featureNine_certification/repo/cer_repo.dart';
-import 'package:resume/src/featureSeven_others/bloc/other_bloc.dart';
-import 'package:resume/src/featureSeven_others/repo/other_repo.dart';
 import 'package:resume/src/featureSeven_project/bloc/proj_bloc.dart';
 import 'package:resume/src/featureSeven_project/repo/proj_repo.dart';
 import 'package:resume/src/featureSix_flutter/bloc/flu_bloc.dart';
@@ -56,9 +54,6 @@ class Routes {
                         ),
                         BlocProvider<FluBloc>(
                           create: (context) => FluBloc(fluRepo: FluRepo()),
-                        ),
-                        BlocProvider<OtherBloc>(
-                          create: (context) => OtherBloc(otherRepo: OtherRepo()),
                         ),
                         BlocProvider<ProjBloc>(
                           create: (context) => ProjBloc(projRepo: ProjRepo()),
