@@ -8,9 +8,9 @@ class ShowFrame extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
        children: [
-         Icon(Icons.phone_android, size: 10,),
-         SizedBox(width: 20,),
-         Text(text,),
+         Icon(Icons.phone_android, size: 15,),
+         SizedBox(width: 10,),
+         Flexible(child: Text(text,)),
        ],
      );
   }

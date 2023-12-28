@@ -18,3 +18,15 @@ Add this code in index.html
     // The value below is injected by flutter build, do not touch.
     const serviceWorkerVersion = null;
   </script>
+  
+  
+  $flutter clean 
+  flutter pub get 
+  flutter build web 
+  npm install firebase  
+  npm install -g npm@10.2.5
+  firebase login
+  firebase init 
+  firebase deploy
+  
+  
