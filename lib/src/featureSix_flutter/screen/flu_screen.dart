@@ -130,6 +130,24 @@ class FluScreen extends StatelessWidget {
                               SizedBox(height: 10,),
                                Row(
                                       children: [
+                                         Expanded(flex:3,child: Text('Testing', style: AppTextStyle.introTextStyle(),)),
+                                         Expanded(flex:10,child: ShowFrame(text: data[index].testing,),)
+                                      ],
+                                      ),
+                               SizedBox(height: 10,),
+                              AppDivider(),
+                              SizedBox(height: 10,),
+                               Row(
+                                      children: [
+                                         Expanded(flex:3,child: Text('Handle Exception', style: AppTextStyle.introTextStyle(),)),
+                                         Expanded(flex:10,child: ShowFrame(text: data[index].exception_handle,),)
+                                      ],
+                                      ),
+                               SizedBox(height: 10,),
+                              AppDivider(),
+                              SizedBox(height: 10,),
+                               Row(
+                                      children: [
                                          Expanded(flex:3,child: Text('Swift', style: AppTextStyle.introTextStyle(),)),
                                          Expanded(flex:10,child: ShowFrame(text: data[index].swift,),)
                                       ],
