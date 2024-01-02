@@ -10,6 +10,8 @@ final String pro_manag;
 final String sof_metho;
 final String swift;
 final String t_party;
+final String exception_handle;
+final String testing;
 final TeamPer team_par;
 
 
@@ -24,6 +26,8 @@ required this.pro_manag,
 required this.sof_metho,
 required this.swift,
 required this.t_party,
+required this.exception_handle,
+required this.testing,
 required this.team_par,
 });
 
@@ -38,6 +42,8 @@ other: json['other'] ,
 pro_manag: json['pro_manag'] ,
 sof_metho: json['sof_metho'] ,
 swift: json['swift'] ,
+exception_handle: json['exception_handle'] ,
+testing: json['testing'] ,
 t_party: json['t_party'] ,
 team_par: TeamPer.fromJson(json['team_par']) ,
 );
