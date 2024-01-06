@@ -1,7 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:resume/src/featureThirteen_count/bloc/count_bloc.dart';
+import 'package:resume/src/featureThirteen_count/repo/count_repo.dart';
 import 'firebase_options.dart';
 import 'src/feature_splashScreen/bloc/splash_bloc.dart';
 import 'src/feature_splashScreen/screen/splash_screen.dart';
@@ -33,10 +37,17 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
     debugShowCheckedModeBanner: false,
       onGenerateRoute: Routes.onGenerateRoute,
-      home: BlocProvider(
-            create: (context) => SplashBloc(),
-            child: const SplashScreen(),
-          ),
+      home: MultiBlocProvider(
+             providers: [
+                BlocProvider(
+                  create: (context) => CountBloc(countRepo: CountRepo()),
+                ),
+                BlocProvider(
+                  create: (context) => SplashBloc(),
+                ),
+            ],
+             child: const SplashScreen(),
+      ),
     );
   }
 }
