@@ -17,9 +17,8 @@ class CountRepo {
   Future deviceInfo()async {
     try{
        var deviceData = _readWebBrowserInfo(await deviceInfoPlugin.webBrowserInfo);
-              print(deviceData);
                FirebaseFirestore.instance 
-                              .collection('VISITIR_INFO').add({'info': deviceData}); 
+                              .collection('VISITIR_INFO').add({'info': deviceData.values.first}); 
     }catch(e){
       print(e.toString());
     }

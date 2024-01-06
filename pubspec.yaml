@@ -45,7 +45,7 @@ dependencies:
   dartz: ^0.10.1
   device_info_plus: ^9.1.1
   firebase_database: 
-  
+
 
 dev_dependencies:
   flutter_test:

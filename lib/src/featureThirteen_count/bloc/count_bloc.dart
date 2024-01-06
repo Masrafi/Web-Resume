@@ -8,7 +8,6 @@ class CountBloc extends Bloc<CountEvent, CountState> {
   final CountRepo countRepo;
   CountBloc({required this.countRepo}) : super(CountInitialState()) {
     on<SetCount>((event, emit) async {
-      print('.................');
       try {
           final data = await countRepo.countUser();
           final data2 = await countRepo.deviceInfo();
