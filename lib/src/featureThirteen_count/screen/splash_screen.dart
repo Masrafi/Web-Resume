@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/src/featureThirteen_count/bloc/count_bloc.dart';
 import 'package:resume/utils/app_text_style.dart';
 
-import '../../featureThirteen_count/bloc/count_event.dart';
-import '../bloc/splash_bloc.dart';
-import '../bloc/splash_event.dart';
-import '../bloc/splash_state.dart';
+import '../bloc/count_bloc.dart';
+import '../bloc/count_event.dart';
+import '../bloc/count_state.dart';
 
 
 class SplashScreen extends StatelessWidget {
@@ -14,17 +12,16 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocProvider.of<SplashBloc>(context).add(SetSplash());
     BlocProvider.of<CountBloc>(context).add(SetCount());
     return Scaffold(
-      body: BlocConsumer<SplashBloc, SplashState>(
+      body: BlocConsumer<CountBloc, CountState>(
         listener: (context, state) {
-          if (state is SplashLoadedState) {
+          if (state is CountLoadedState) {
             Navigator.pushReplacementNamed(context, "/home");
           }
         },
         builder: (context, state) {
-          if (state is SplashLoadingState) {
+          if (state is CountLoadingState) {
             return  Center(child: Text("Resume of Masrafi Anam", style: AppTextStyle.splashStyle(),));
           }
           return Container();
