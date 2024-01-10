@@ -189,7 +189,7 @@ class _HomeState extends State<Home> {
                     SizedBox(height: 10,),
                     CertScreen(),
                     SizedBox(height: 30,),
-                    Text('Info: This portfolio made with Flutter, Dart and Firebase. This is not full responsive. So, this website should need to open in full windows.')
+                    Text('Info: This portfolio made with Flutter, Dart and Firebase. I look forward to the opportunity to discuss my qualifications in more detail. Please feel free to contact me at [phone number] or [email address]. Thank you for reviewing my portfolio.')
                   ],
                   ),
                 ),
