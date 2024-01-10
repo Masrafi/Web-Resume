@@ -53,11 +53,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  final GlobalKey globalKeyOne = GlobalKey();
-  final GlobalKey globalKeyTwo = GlobalKey();
-  final GlobalKey globalKeyThree = GlobalKey();
-  final GlobalKey globalKeyFour = GlobalKey();
-  
+ 
+  double left = 0, right = 0;
   @override
     void initState() {
       // TODO: implement initState
@@ -78,75 +75,131 @@ class _HomeState extends State<Home> {
     }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-    body: ListView(
-    padding: const EdgeInsets.all(20.0),
-    //shrinkWrap: true,
-    children:  [
-      IntroScreen(),
-      SizedBox(height: 30,),
-      Text('INTRODUCTION AND OBJECTIVE', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      ObjectiveScreen(),
-      SizedBox(height: 30,),
-      Text('WORK EXPERIENCE', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      WorkScreen(),
-      SizedBox(height: 30,),
-      Text('APP IN GOOGLE PLAY & APP STORE', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      WorkExScreen(),
-      SizedBox(height: 30,),
-      Text('TECHNICAL SKILLS', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-     SizedBox(height: 30,),
-     FluScreen(),
-      //OtherScreen(),
-      SizedBox(height: 30,),
-      Text('PROJECTS', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      ProjScreen(),
-      SizedBox(height: 30,),
-      Text('PARTICIPATION IN TRAINING', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      TrainScreen(),
-      SizedBox(height: 30,),
-      Text('ORGANISATIONAL CERTIFICATE', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      CerScreen(),
-      SizedBox(height: 30,),
-      Text('EDUCATION QUALIFICATION', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      EduScreen(),
-      SizedBox(height: 30,),
-      Text('PERSONAL DETAILS', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      PerScreen(),
-      SizedBox(height: 30,),
+    print(MediaQuery.of(context).size.width.toString());
+    if(MediaQuery.of(context).size.width < 1400){
+      setState(() {
+        left=400.0;
+        right=400.0;
+      });
+      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
+    } if(MediaQuery.of(context).size.width < 1200){
+      setState(() {
+        left=350.0;
+        right=350.0;
+      });
       
-      Text('REFERENCE', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      RefScreen(),
-      SizedBox(height: 30,),
-      Text('CERTIFICATION', style: AppTextStyle.highlightsTextStyle(),),
-      AppDivider(),
-      SizedBox(height: 10,),
-      CertScreen(),
-      SizedBox(height: 30,),
-      Text('Info: This portfolio made with Flutter, Dart and Firebase. This is not full responsive. So, this website should need to open in full windows.')
-    ],
-    )
-   // )
-    );
+      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
+    } if(MediaQuery.of(context).size.width < 1000){
+      setState(() {
+        left=250.0;
+        right=250.0;
+      });
+      
+      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
+    } if(MediaQuery.of(context).size.width < 800){
+      setState(() {
+        left=150.0;
+        right=150.0;
+      });
+      }
+      if(MediaQuery.of(context).size.width < 600){
+            setState(() {
+              left=50.0;
+              right=50.0;
+            });
+      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
+    } if(MediaQuery.of(context).size.width < 400){
+      setState(() {
+        left=20.0;
+        right=20.0;
+      });
+      
+      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
+    } 
+    
+      return Scaffold(
+          body: Center(
+            child: SingleChildScrollView(
+              child: Padding(
+                padding:  EdgeInsets.only(top: 20.0, bottom: 20, left: left, right: right),
+                child: SizedBox(
+                width: 800,
+                  child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  //padding: const EdgeInsets.all(20.0),
+                  //shrinkWrap: true,
+                  children:  [
+                    IntroScreen(),
+                    SizedBox(height: 30,),
+                    Text('INTRODUCTION AND OBJECTIVE', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    ObjectiveScreen(),
+                    SizedBox(height: 30,),
+                    Text('WORK EXPERIENCE', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    WorkScreen(),
+                    SizedBox(height: 30,),
+                    Text('APP IN GOOGLE PLAY & APP STORE', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    WorkExScreen(),
+                    SizedBox(height: 30,),
+                    Text('TECHNICAL SKILLS', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                   SizedBox(height: 30,),
+                   FluScreen(),
+                    //OtherScreen(),
+                    SizedBox(height: 30,),
+                    Text('PROJECTS', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    ProjScreen(),
+                    SizedBox(height: 30,),
+                    Text('PARTICIPATION IN TRAINING', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    TrainScreen(),
+                    SizedBox(height: 30,),
+                    Text('ORGANISATIONAL CERTIFICATE', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    CerScreen(),
+                    SizedBox(height: 30,),
+                    Text('EDUCATION QUALIFICATION', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    EduScreen(),
+                    SizedBox(height: 30,),
+                    Text('PERSONAL DETAILS', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    PerScreen(),
+                    SizedBox(height: 30,),
+                    
+                    Text('REFERENCE', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    RefScreen(),
+                    SizedBox(height: 30,),
+                    Text('CERTIFICATION', style: AppTextStyle.highlightsTextStyle(),),
+                    AppDivider(),
+                    SizedBox(height: 10,),
+                    CertScreen(),
+                    SizedBox(height: 30,),
+                    Text('Info: This portfolio made with Flutter, Dart and Firebase. This is not full responsive. So, this website should need to open in full windows.')
+                  ],
+                  ),
+                ),
+              ),
+            ),
+          )
+         // )
+          ); 
+   
+    
     
   }
 }

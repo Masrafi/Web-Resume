@@ -11,10 +11,10 @@ class Frame extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: alignment,
-      child: UnconstrainedBox(
+      child: SafeArea(
         child: Container(
-        width: width,
-        height: height,
+        // width: width,
+        // height: height,
          margin: EdgeInsets.only(bottom: 15),
         padding: EdgeInsets.all(15),
         decoration: BoxDecoration(

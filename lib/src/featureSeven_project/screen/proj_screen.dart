@@ -18,32 +18,57 @@ class ProjScreen extends StatelessWidget {
                builder: (context, state) {
                  if(state is ProjLoaded) {
                    List<ProjModel> data = state.mydata;
-                   return GridView.builder(
-                         shrinkWrap: true,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 10.0,
-                            childAspectRatio: 6,
-                            //crossAxisSpacing: 10.0,
-                            ),
-                        padding: EdgeInsets.zero,
-                        itemCount: data.length,
-                         itemBuilder: (_,  index) {
+                   return ListView.builder(
+                   physics: const NeverScrollableScrollPhysics(),
+                   shrinkWrap: true,
+                   itemCount:  data.length,
+                   itemBuilder: (_, index) {
                      return Frame(
                      alignment: Alignment.topLeft,
                      height: 100,
                        width: 600,
-                       child: Column(
-                         mainAxisAlignment: MainAxisAlignment.start,
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Text(data[index].title, style: AppTextStyle.introTextStyle(),),
-                           LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
-                         ],
-                         ),
+                       child: SingleChildScrollView(
+                         child: Column(
+                           mainAxisAlignment: MainAxisAlignment.start,
+                           crossAxisAlignment: CrossAxisAlignment.start,
+                           children: [
+                             Text(data[index].title, style: AppTextStyle.introTextStyle(),),
+                             LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
+                           ],
+                           ),
+                       ),
                      );
                    },
                    );
+                   
+                   // GridView.builder(
+                   //       shrinkWrap: true,
+                   //        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                   //          crossAxisCount: 2,
+                   //          mainAxisSpacing: 10.0,
+                   //          childAspectRatio: 6,
+                   //          //crossAxisSpacing: 10.0,
+                   //          ),
+                   //      padding: EdgeInsets.zero,
+                   //      itemCount: data.length,
+                   //       itemBuilder: (_,  index) {
+                   //   return Frame(
+                   //   alignment: Alignment.topLeft,
+                   //   height: 100,
+                   //     width: 600,
+                   //     child: SingleChildScrollView(
+                   //       child: Column(
+                   //         mainAxisAlignment: MainAxisAlignment.start,
+                   //         crossAxisAlignment: CrossAxisAlignment.start,
+                   //         children: [
+                   //           Text(data[index].title, style: AppTextStyle.introTextStyle(),),
+                   //           LinkWidget(link:data[index].link, child: Text(data[index].link, style: AppTextStyle.linkTextStyle(),)),
+                   //         ],
+                   //         ),
+                   //     ),
+                   //   );
+                   // },
+                   // );
                  } else if(state is ProjLoading) {
                    return const Center(child: CircularProgressIndicator(),);
                  } else {
