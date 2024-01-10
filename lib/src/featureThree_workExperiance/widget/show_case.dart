@@ -21,11 +21,11 @@ class ShowCase extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
     alignment: Alignment.topLeft,
-      child: UnconstrainedBox(
+      child: SafeArea(
         child: Container(
-        width: 600,
-        height: 250,
-        //margin: EdgeInsets.only(bottom: 15),
+        // width: 600,
+        // height: 250,
+        margin: EdgeInsets.only(bottom: 20),
         padding: EdgeInsets.all(15),
         decoration: AppBoxDecoration.commonDecoration,
           child: SingleChildScrollView(

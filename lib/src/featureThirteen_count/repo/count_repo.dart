@@ -12,18 +12,18 @@ class CountRepo {
 
   Future countUser()async {
     final cRef = FirebaseFirestore.instance.collection('VISITOR_COUNT');
-        await cRef
-            .doc("hUZa9jeRwAYzm0nrEpyh") //Paste the id which was generated automatically
-            .set({"count": FieldValue.increment(1)}, SetOptions(merge: true));
+        // await cRef
+        //     .doc("hUZa9jeRwAYzm0nrEpyh") //Paste the id which was generated automatically
+        //     .set({"count": FieldValue.increment(1)}, SetOptions(merge: true));
   }
   Future deviceInfo()async {
     var date = DateFormat('yyyy-MMMM-dd').format(DateTime(now.year, now.month, now.day,));
     var time = DateFormat.jm().format(DateTime.now());
 
     try{
-       var deviceData = _readWebBrowserInfo(await deviceInfoPlugin.webBrowserInfo);
-               FirebaseFirestore.instance 
-                              .collection('VISITIR_INFO').add({'info': deviceData.values.first, 'date': '$date $time'}); 
+       // var deviceData = _readWebBrowserInfo(await deviceInfoPlugin.webBrowserInfo);
+       //         FirebaseFirestore.instance 
+       //                        .collection('VISITIR_INFO').add({'info': deviceData.values.first, 'date': '$date $time'}); 
     }catch(e){
       print(e.toString());
     }

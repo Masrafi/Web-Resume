@@ -25,11 +25,14 @@ class CerScreen extends StatelessWidget {
                      crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
                        SizedBox(height: 15,),
-                       Row(
-                         children: [
-                           Text((index+1).toString(), style: AppTextStyle.introTextStyle(),),
-                           Text('. ${data[index].title}', style: AppTextStyle.introTextStyle(),),
-                         ],
+                       SingleChildScrollView(
+                       scrollDirection: Axis.horizontal,
+                         child: Row(
+                           children: [
+                             Text((index+1).toString(), style: AppTextStyle.introTextStyle(),),
+                             Text('. ${data[index].title}', style: AppTextStyle.introTextStyle(),),
+                           ],
+                         ),
                        ),
                        Text('    ${data[index].discribtion}',),
                        

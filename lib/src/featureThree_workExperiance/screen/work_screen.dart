@@ -23,20 +23,28 @@ class _WorkScreenState extends State<WorkScreen> {
                builder: (context, state) {
                  if(state is WorkLoaded) {
                    List<WorkModel> data = state.mydata;
-                   return GridView.builder(
-                   shrinkWrap: true,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            mainAxisSpacing: 10.0,
-                            childAspectRatio: 2.7,
-                            //crossAxisSpacing: 10.0,
-                            ),
-                        padding: EdgeInsets.zero,
-                        itemCount: data.length,
-                         itemBuilder: (_,  index) {
-                     return ShowCase(company_name: data[index].company_name, duration: data[index].duration, position: data[index].position, products: data[index].products, a: data[index].responsibilities.a, b: data[index].responsibilities.b, c: data[index].responsibilities.c, d: data[index].responsibilities.d, e: data[index].responsibilities.e,);
-                   },
-                   );
+                   return ListView.builder(
+                           physics: const NeverScrollableScrollPhysics(),
+                           shrinkWrap: true,
+                           itemCount:  data.length,
+                           itemBuilder: (_, index) {
+                            return ShowCase(company_name: data[index].company_name, duration: data[index].duration, position: data[index].position, products: data[index].products, a: data[index].responsibilities.a, b: data[index].responsibilities.b, c: data[index].responsibilities.c, d: data[index].responsibilities.d, e: data[index].responsibilities.e,);
+                           },
+                           );
+                   // GridView.builder(
+                   // shrinkWrap: true,
+                   //        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                   //          crossAxisCount: 2,
+                   //          mainAxisSpacing: 10.0
+                   //          childAspectRatio: 2.7,
+                   //          //crossAxisSpacing: 10.0,
+                   //          ),
+                   //      padding: EdgeInsets.zero,
+                   //      itemCount: data.length,
+                   //       itemBuilder: (_,  index) {
+                   //   return ShowCase(company_name: data[index].company_name, duration: data[index].duration, position: data[index].position, products: data[index].products, a: data[index].responsibilities.a, b: data[index].responsibilities.b, c: data[index].responsibilities.c, d: data[index].responsibilities.d, e: data[index].responsibilities.e,);
+                   // },
+                   // );
                  } else if(state is WorkLoading) {
                    return const Center(child: CircularProgressIndicator(),);
                  } else {

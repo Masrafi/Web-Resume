@@ -25,10 +25,10 @@ class FluScreen extends StatelessWidget {
                    itemBuilder: (_, index) {
                      return Align(
                        alignment: Alignment.topLeft,
-                       child: UnconstrainedBox(
+                       child: SafeArea(
                          child: Container(
-                         width: 800,
-                         height: 1000,
+                         // width: 800,
+                         // height: 1000,
                          margin: EdgeInsets.only(bottom: 15),
                          padding: EdgeInsets.all(15),
                          decoration: BoxDecoration(

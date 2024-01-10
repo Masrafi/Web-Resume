@@ -12,17 +12,19 @@ class IntroBodyUrl extends StatelessWidget {
     return Row(
          children: [
            Text('${head}: ', style: AppTextStyle.introTextStyle(),),
-           GestureDetector(
-           child: Text(title, style: AppTextStyle.linkTextStyle(),),
-               onTap: () async{
-                    if (await canLaunch(title)) {
-                      await launch(title);
-                    } else {
-                      throw 'Could not launch $title';
-                    }
-                          
-               },
-               )
+           Expanded(
+             child: GestureDetector(
+             child: Text(title, style: AppTextStyle.linkTextStyle(),),
+                 onTap: () async{
+                      if (await canLaunch(title)) {
+                        await launch(title);
+                      } else {
+                        throw 'Could not launch $title';
+                      }
+                            
+                 },
+                 ),
+           )
         ],
      );
   }
