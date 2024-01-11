@@ -45,7 +45,9 @@ dependencies:
   dartz: ^0.10.1
   device_info_plus: ^9.1.1
   firebase_database: 
-  intl: 
+  intl:
+  showcaseview: ^2.0.3
+  responsive_builder: ^0.7.0
 
 
 dev_dependencies:
