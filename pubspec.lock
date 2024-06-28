@@ -497,10 +497,10 @@ packages:
     dependency: "direct main"
     description:
       name: soft_container
-      sha256: "00f6a09d1a739bc3a14cd39a677b47ca1b766bf77cc6c476312c178f2aa2d173"
+      sha256: cdd9e631497d3e9dd879e00396bf5ae98b5ff0822192317125c51cabca589112
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   source_span:
     dependency: transitive
     description:
@@ -649,10 +649,10 @@ packages:
     dependency: transitive
     description:
       name: web
-      sha256: afe077240a270dcfd2aafe77602b4113645af95d0ad31128cc02bce5ac5d5152
+      sha256: "4188706108906f002b3a293509234588823c8c979dc83304e229ff400c996b05"
       url: "https://pub.dev"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.2"
   win32:
     dependency: transitive
     description:

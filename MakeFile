@@ -29,4 +29,5 @@ Add this code in index.html
   firebase init 
   firebase deploy
   
-  
+  For issue run
+  flutter pub upgrade web

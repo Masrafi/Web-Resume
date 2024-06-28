@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -29,7 +28,7 @@ void main() async {
     //        projectId: '1:703989381905:web:57670f6b6bdfcc30076ab0',
     //      ));
   } else {
-    await Firebase.initializeApp();
+await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   }
   runApp(const MyApp());
 }

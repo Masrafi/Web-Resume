@@ -9,6 +9,7 @@ class ImageView extends StatelessWidget {
     return FutureBuilder(
        future: FireStoreDataBase().getData(),
        builder: (context, snapshot) {
+         print(snapshot.data.toString());
          if (snapshot.hasError) {
            return const Text(
              "Something went wrong",
