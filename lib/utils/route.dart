@@ -21,13 +21,13 @@ import 'package:resume/src/featureThree_workExperiance/repo/work_repo.dart';
 import 'package:resume/src/featureTwelve_referance/bloc/ref_bloc.dart';
 import 'package:resume/src/featureTwelve_referance/repo/ref_repo.dart';
 import 'package:resume/src/featureTwo_objective/bloc/objective_bloc.dart';
-import 'package:resume/src/home.dart';
 
 import '../src/featureFour_workExperiance/bloc/workEx_bloc.dart';
 import '../src/featureFour_workExperiance/repo/workEx_repo.dart';
 import '../src/featureTherteen_certification/bloc/cer_bloc.dart';
 import '../src/featureTherteen_certification/repo/cer_repo.dart';
 import '../src/featureTwo_objective/repo/objective_repo.dart';
+import '../src/home/home.dart';
 
 
 class Routes {

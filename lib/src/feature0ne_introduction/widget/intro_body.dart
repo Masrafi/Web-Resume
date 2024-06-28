@@ -11,7 +11,7 @@ class IntroBody extends StatelessWidget {
     return Row(
          children: [
            Text('${head}: ', style: AppTextStyle.introTextStyle(),),
-           Text(title),
+           Text(title, style: AppTextStyle.linkTextStyle(),),
         ],
      );
   }

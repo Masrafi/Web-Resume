@@ -48,12 +48,14 @@ dependencies:
   intl:
   showcaseview: ^2.0.3
   responsive_builder: ^0.7.0
-
+  soft_container: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.13.1
+#  bymadecontainer:
+#    path: package/bymadecontainer
     
 flutter_launcher_icons:
   android: true

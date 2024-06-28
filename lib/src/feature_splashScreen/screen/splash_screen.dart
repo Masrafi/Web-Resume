@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:resume/src/featureThirteen_count/bloc/count_bloc.dart';
-import 'package:resume/src/home.dart';
+import 'package:resume/src/home/home.dart';
 import 'package:resume/utils/app_text_style.dart';
 import 'package:showcaseview/showcaseview.dart';
 
+import '../../../show.dart';
 import '../../featureThirteen_count/bloc/count_event.dart';
 import '../bloc/splash_bloc.dart';
 import '../bloc/splash_event.dart';
@@ -26,6 +27,11 @@ class SplashScreen extends StatelessWidget {
         listener: (context, state) {
           if (state is SplashLoadedState) {
             Navigator.pushReplacementNamed(context, "/home");
+            // Navigator.push(context, MaterialPageRoute(builder: (context)=>ShowCaseWidget(
+            //   builder: Builder(
+            //     builder: (_) => MailPage(),
+            //   ),
+            // )));  
           }
         },
         builder: (context, state) {
