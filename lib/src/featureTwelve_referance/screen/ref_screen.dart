@@ -14,83 +14,96 @@ class RefScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<RefBloc, RefState> (
-               builder: (context, state) {
-                 if(state is RefLoaded) {
-                   List<RefModel> data = state.mydata;
-                   return ListView.builder(
-                     physics: const NeverScrollableScrollPhysics(),
-                     shrinkWrap: true,
-                     itemCount:  data.length,
-                     itemBuilder: (_, index) {
-                       return Align(
-                                alignment: Alignment.topLeft,
-                       child: SafeArea(
-                         child: Container(
-                         // width: 600,
-                         // height: 180,
-                         margin: EdgeInsets.only(bottom: 20),
-                         padding: EdgeInsets.all(15),
-                         decoration: AppBoxDecoration.commonDecoration,
-                           child: Column(
-                           mainAxisAlignment: MainAxisAlignment.start,
-                           crossAxisAlignment: CrossAxisAlignment.start,
-                           children: [
-                             Text(data[index].name,  style: AppTextStyle.introTextStyle(),),
-                             Text(data[index].email,),
-                             Text(data[index].phone,),
-                             Text(data[index].degic,),
-                             Text(data[index].organization,),
-                           ],
-                           ),
-                         ),
-                       ),
-                     );
-                     },
-                     );
-                   
-                   // GridView.builder(
-                   // shrinkWrap: true,
-                   //        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                   //          crossAxisCount: 2,
-                   //          mainAxisSpacing: 5.0,
-                   //          childAspectRatio: 3.8,
-                   //          //crossAxisSpacing: 10.0,
-                   //          ),
-                   //      padding: EdgeInsets.zero,
-                   //      itemCount: data.length,
-                   //       itemBuilder: (_,  index) {
-                   //   return Align(
-                   //              alignment: Alignment.topLeft,
-                   //     child: UnconstrainedBox(
-                   //       child: Container(
-                   //       width: 600,
-                   //       height: 180,
-                   //       //margin: EdgeInsets.only(bottom: 15),
-                   //       padding: EdgeInsets.all(15),
-                   //       decoration: AppBoxDecoration.commonDecoration,
-                   //         child: Column(
-                   //         mainAxisAlignment: MainAxisAlignment.start,
-                   //         crossAxisAlignment: CrossAxisAlignment.start,
-                   //         children: [
-                   //           Text(data[index].name,  style: AppTextStyle.introTextStyle(),),
-                   //           Text(data[index].email,),
-                   //           Text(data[index].phone,),
-                   //           Text(data[index].degic,),
-                   //           Text(data[index].organization,),
-                   //         ],
-                   //         ),
-                   //       ),
-                   //     ),
-                   //   );
-                   // },
-                   // );
-                 } else if(state is RefLoading) {
-                   return const Center(child: CircularProgressIndicator(),);
-                 } else {
-                   return Container();
-                 }
-               },
-               );
+    return BlocBuilder<RefBloc, RefState>(
+      builder: (context, state) {
+        if (state is RefLoaded) {
+          List<RefModel> data = state.mydata;
+          return ListView.builder(
+            physics: const NeverScrollableScrollPhysics(),
+            shrinkWrap: true,
+            itemCount: data.length,
+            itemBuilder: (_, index) {
+              return Align(
+                alignment: Alignment.topLeft,
+                child: SafeArea(
+                  child: Container(
+                    // width: 600,
+                    // height: 180,
+                    margin: EdgeInsets.only(bottom: 20),
+                    padding: EdgeInsets.all(15),
+                    decoration: AppBoxDecoration.commonDecoration,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          data[index].name,
+                          style: AppTextStyle.introTextStyle(),
+                        ),
+                        Text(
+                          data[index].email,
+                        ),
+                        Text(
+                          data[index].phone,
+                        ),
+                        Text(
+                          data[index].degic,
+                        ),
+                        Text(
+                          data[index].organization,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+
+          // GridView.builder(
+          // shrinkWrap: true,
+          //        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          //          crossAxisCount: 2,
+          //          mainAxisSpacing: 5.0,
+          //          childAspectRatio: 3.8,
+          //          //crossAxisSpacing: 10.0,
+          //          ),
+          //      padding: EdgeInsets.zero,
+          //      itemCount: data.length,
+          //       itemBuilder: (_,  index) {
+          //   return Align(
+          //              alignment: Alignment.topLeft,
+          //     child: UnconstrainedBox(
+          //       child: Container(
+          //       width: 600,
+          //       height: 180,
+          //       //margin: EdgeInsets.only(bottom: 15),
+          //       padding: EdgeInsets.all(15),
+          //       decoration: AppBoxDecoration.commonDecoration,
+          //         child: Column(
+          //         mainAxisAlignment: MainAxisAlignment.start,
+          //         crossAxisAlignment: CrossAxisAlignment.start,
+          //         children: [
+          //           Text(data[index].name,  style: AppTextStyle.introTextStyle(),),
+          //           Text(data[index].email,),
+          //           Text(data[index].phone,),
+          //           Text(data[index].degic,),
+          //           Text(data[index].organization,),
+          //         ],
+          //         ),
+          //       ),
+          //     ),
+          //   );
+          // },
+          // );
+        } else if (state is RefLoading) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        } else {
+          return Container();
+        }
+      },
+    );
   }
 }

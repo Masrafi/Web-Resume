@@ -49,6 +49,7 @@ dependencies:
   showcaseview: ^2.0.3
   responsive_builder: ^0.7.0
   soft_container: ^1.0.1
+  timeline_tile: 2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -86,7 +87,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

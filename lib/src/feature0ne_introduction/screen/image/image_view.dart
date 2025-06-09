@@ -16,10 +16,17 @@ class ImageView extends StatelessWidget {
            );
          }
          if (snapshot.connectionState == ConnectionState.done) {
-           return Image.network(
-             snapshot.data.toString(),
-             height: 200,
-           );
+           return CircleAvatar(
+              radius: 70.0,
+              backgroundImage:
+                  NetworkImage(snapshot.data.toString()),
+              backgroundColor: Colors.transparent,
+            );
+           
+           // Image.network(
+           //   snapshot.data.toString(),
+           //   height: 200,
+           // );
          }
          return const Center(child: CircularProgressIndicator());
        },

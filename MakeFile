@@ -22,7 +22,7 @@ Add this code in index.html
   
   $flutter clean 
   flutter pub get 
-  flutter build web 
+  flutter build web or flutter build web --web-renderer html
   npm install firebase  
   npm install -g npm@10.2.5
   firebase login

@@ -6,6 +6,7 @@ final String email;
 final String skype;
 final String linkedIn;
 final String address;
+final String github;
 
 IntroModel({
 required this.name,
@@ -14,6 +15,7 @@ required this.email,
 required this.skype,
 required this.linkedIn,
 required this.address,
+required this.github,
 });
 
 factory IntroModel.fromJson(Map<String, dynamic> json) {
@@ -24,6 +26,7 @@ email: json['email'],
 skype: json['skype'],
 linkedIn: json['linkedIn'],
 address: json['address'],
+github: json['github'],
 );
 }
 }
