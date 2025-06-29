@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/utils/frame.dart';
-
 import '../../../utils/app_divider.dart';
 import '../../../utils/app_text_style.dart';
 import '../bloc/flu_bloc.dart';
@@ -14,10 +12,15 @@ class FluScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print('a');
     return BlocBuilder<FluBloc, FluState>(
       builder: (context, state) {
+        if (state is FluLoading) {
+          return Text("Loading ...");
+        }  
         if (state is FluLoaded) {
           List<FluModel> data = state.mydata;
+          print("from UI: $data");
           return ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
@@ -66,11 +69,11 @@ class FluScreen extends StatelessWidget {
                                         text: data[index].language.f1,
                                       ),
                                       SizedBox(height: 5),
-                                      AppDivider(),
-                                      SizedBox(height: 5),
-                                      ShowFrame(
-                                        text: data[index].language.f2,
-                                      ),
+                                      // AppDivider(),
+                                      // SizedBox(height: 5),
+                                      // ShowFrame(
+                                      //   text: data[index].language.f2,
+                                      // ),
                                     ],
                                   )),
                             ],
@@ -182,6 +185,25 @@ class FluScreen extends StatelessWidget {
                               Expanded(
                                   flex: 3,
                                   child: Text(
+                                    'Release Testing',
+                                    style: AppTextStyle.introTextStyle(),
+                                  )),
+                              Expanded(
+                                flex: 10,
+                                child: ShowFrame(
+                                  text: data[index].release_testing,
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(height: 10),
+                          AppDivider(),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Expanded(
+                                  flex: 3,
+                                  child: Text(
                                     'Handle Exception',
                                     style: AppTextStyle.introTextStyle(),
                                   )),
@@ -239,6 +261,20 @@ class FluScreen extends StatelessWidget {
                               Expanded(
                                   flex: 10,
                                   child: ShowFrame(text: data[index].t_party)),
+                            ],
+                          ), 
+                          SizedBox(height: 10),
+                          AppDivider(),
+                          SizedBox(height: 10),
+                          Row(
+                            children: [
+                              Expanded(
+                                  flex: 3,
+                                  child: Text('Analytics',
+                                      style: AppTextStyle.introTextStyle())),
+                              Expanded(
+                                  flex: 10,
+                                  child: ShowFrame(text: data[index].analytics)),
                             ],
                           ),
                           SizedBox(height: 10),
@@ -348,6 +384,25 @@ class FluScreen extends StatelessWidget {
                               ),
                             ],
                           ),
+                          SizedBox(height: 10), 
+                          AppDivider(),
+                          SizedBox(height: 10),
+                          Row(
+                                                      children: [
+                                                        Expanded(
+                                                            flex: 3,
+                                                            child: Text(
+                                                              'Flutter Package',
+                                                              style: AppTextStyle.introTextStyle(),
+                                                            )),
+                                                        Expanded(
+                                                          flex: 10,
+                                                          child: ShowFrame(
+                                                            text: data[index].fFlutter_package,
+                                                          ),
+                                                        ),
+                                                      ],
+                                                    ),
                           SizedBox(height: 10),
                           AppDivider(),
                           SizedBox(height: 10),
@@ -377,13 +432,12 @@ class FluScreen extends StatelessWidget {
               );
             },
           );
-        } else if (state is FluLoading) {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
-        } else {
-          return Container();
         }
+        if(state is FluError){
+          return Text(state.error);
+        }
+          return Container();
+        
       },
     );
   }

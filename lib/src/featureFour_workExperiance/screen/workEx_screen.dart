@@ -53,7 +53,7 @@ class MyProject extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         ShowScreen(
-                          title: 'Name: ',
+                          title: 'Name:  ',
                           head: data[index].name,
                           style: const TextStyle(),
                         ),
@@ -61,8 +61,8 @@ class MyProject extends StatelessWidget {
                             ? LinkWidget(
                                 link: data[index].app_store,
                                 child: ShowScreen(
-                                  title: 'App Store Link: ',
-                                  head: data[index].app_store,
+                                  title: 'App Store Link',
+                                  head: 'Open Link',
                                   style: AppTextStyle.linkTextStyle(),
                                 ),
                               )
@@ -71,8 +71,8 @@ class MyProject extends StatelessWidget {
                             ? LinkWidget(
                                 link: data[index].play_store,
                                 child: ShowScreen(
-                                  title: 'Play Store Link: ',
-                                  head: data[index].play_store,
+                                  title: 'Play Store Link',
+                                  head: 'Open Link',
                                   style: AppTextStyle.linkTextStyle(),
                                 ),
                               )

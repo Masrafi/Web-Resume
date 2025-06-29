@@ -12,6 +12,9 @@ class FluModel {
   final String exception_handle;
   final String testing;
   final TeamPer team_par;
+  final String fFlutter_package;
+  final String analytics;
+  final String release_testing;
 
   FluModel({
     required this.a_work,
@@ -27,6 +30,9 @@ class FluModel {
     required this.exception_handle,
     required this.testing,
     required this.team_par,
+    required this.fFlutter_package,
+    required this.analytics,
+    required this.release_testing,
   });
 
   factory FluModel.fromJson(Map<String, dynamic> json) {
@@ -44,6 +50,9 @@ class FluModel {
       testing: json['testing'],
       t_party: json['t_party'],
       team_par: TeamPer.fromJson(json['team_par']),
+      fFlutter_package: json['fFlutter_package'],
+      analytics: json['analytics'],
+      release_testing: json['release_testing'],
     );
   }
 }
@@ -106,17 +115,17 @@ class Flutter {
 
 class Language {
   final String f1;
-  final String f2;
+  //final String f2;
 
   Language({
     required this.f1,
-    required this.f2,
+    //required this.f2,
   });
 
   factory Language.fromJson(Map<String, dynamic> json) {
     return Language(
       f1: json['f1'],
-      f2: json['f2'],
+      //f2: json['f2'],
     );
   }
 }

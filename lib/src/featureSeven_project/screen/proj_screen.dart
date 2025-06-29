@@ -86,7 +86,7 @@ class ProjScreen extends StatelessWidget {
             LinkWidget(
               link: model.link,
               child: Text(
-                model.link,
+                'Open Link',
                 style: AppTextStyle.linkTextStyle(),
               ),
             ),

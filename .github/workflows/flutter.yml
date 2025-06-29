@@ -1,0 +1,29 @@
+name: 🧪 Flutter Test with coverage 📊
+
+on:
+  pull_request:
+    branches: [main, master, develop]
+
+jobs:
+  lint:
+    name: 🧪 Flutter Analyze
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.1'
+          channel: 'stable'
+      - run: flutter analyze
+  coverage:
+    name: 🧪 Flutter Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.24.1'
+          channel: 'stable'
+      - run: flutter test

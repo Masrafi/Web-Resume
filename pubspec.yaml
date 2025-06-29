@@ -46,7 +46,6 @@ dependencies:
   device_info_plus: ^9.1.1
   firebase_database: 
   intl:
-  showcaseview: ^2.0.3
   responsive_builder: ^0.7.0
   soft_container: ^1.0.1
   timeline_tile: 2.0.0

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../utils/app_divider.dart';
 import '../../utils/app_text_style.dart';
 import '../feature0ne_introduction/bloc/intro_bloc.dart';
@@ -11,7 +10,6 @@ import '../featureEight_training/bloc/train_event.dart';
 import '../featureEight_training/screen/train_screen.dart';
 import '../featureElaven_personalDetails/bloc/per_bloc.dart';
 import '../featureElaven_personalDetails/bloc/per_event.dart';
-import '../featureElaven_personalDetails/screen/per_screen.dart';
 import '../featureFive_language/bloc/language_bloc.dart';
 import '../featureFive_language/bloc/language_event.dart';
 import '../featureFour_workExperiance/bloc/workEx_bloc.dart';
@@ -123,38 +121,42 @@ class _HomeContentTabletState extends State<HomeContentTablet> {
               SizedBox(
                 height: 30,
               ),
-              Row(
-                children: [
-                  Text(
-                    'TECHNICAL SKILLS',
-                    style: AppTextStyle.highlightsTextStyle(),
-                  ),
-                  Spacer(),
-                  _buildSkillChip(
-                    icon: Icons.flutter_dash,
-                    label: 'Flutter',
-                    color: Colors.blue,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.android,
-                    label: 'Kotlin Jetpack',
-                    color: Colors.green,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.apple,
-                    label: 'SwiftUI',
-                    color: Colors.black,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.code,
-                    label: 'Node.js',
-                    color: Colors.green.shade800,
-                  ),
-                ],
-              ),
+              Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'TECHNICAL SKILLS',
+                                            style: AppTextStyle.highlightsTextStyle(),
+                                          ),
+                                          const SizedBox(height: 10),
+                                          Wrap(
+                                            spacing: 10,
+                                            runSpacing: 10,
+                                            children: [
+                                              _buildSkillChip(
+                                                icon: Icons.flutter_dash,
+                                                label: 'Flutter',
+                                                color: Colors.blue,
+                                              ),
+                                              _buildSkillChip(
+                                                icon: Icons.android,
+                                                label: 'Kotlin Jetpack',
+                                                color: Colors.green,
+                                              ),
+                                              _buildSkillChip(
+                                                icon: Icons.apple,
+                                                label: 'SwiftUI',
+                                                color: Colors.black,
+                                              ),
+                                              _buildSkillChip(
+                                                icon: Icons.code,
+                                                label: 'Node.js',
+                                                color: Colors.green.shade800,
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
               AppDivider(),
               SizedBox(
                 height: 30,

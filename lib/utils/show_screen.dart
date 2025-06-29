@@ -12,6 +12,7 @@ class ShowScreen extends StatelessWidget {
       return Row(
            children: [
              Expanded(flex:3,child: Text('${title}', style: AppTextStyle.introTextStyle(),)),
+             Text(":  ", style: AppTextStyle.introTextStyle()),
              Expanded(flex:10,child: Align(alignment: Alignment.topLeft, child: Text(head, style: style,))),
           ],
        );

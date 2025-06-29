@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:resume/utils/app_divider.dart';
 import 'package:timeline_tile/timeline_tile.dart';
-
 import '../../../utils/app_text_style.dart';
 import '../bloc/edu_bloc.dart';
 import '../bloc/edu_state.dart';

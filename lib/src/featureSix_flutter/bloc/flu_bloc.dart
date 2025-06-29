@@ -9,10 +9,12 @@ class FluBloc extends Bloc<FluEvent, FluState> {
   final FluRepo fluRepo;
   FluBloc({required this.fluRepo}) : super(InitialState()) {
     on<FluGetData>((event, emit) async {
+      print('bloc call');
     emit(FluLoading());
-    await Future.delayed(const Duration(seconds: 1));
+    //await Future.delayed(const Duration(seconds: 1));
     try {
     final data = await fluRepo.get();
+    print('bloc: $data');
     emit(FluLoaded(data));
     }
     catch (e){

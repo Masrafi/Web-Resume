@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:showcaseview/showcaseview.dart';
+import 'package:resume/src/feature0ne_introduction/screen/image/database_manager.dart';
 import '../../utils/app_divider.dart';
 import '../../utils/app_text_style.dart';
 import '../feature0ne_introduction/bloc/intro_bloc.dart';
@@ -36,7 +36,6 @@ import '../featureThree_workExperiance/bloc/work_event.dart';
 import '../featureThree_workExperiance/screen/work_screen.dart';
 import '../featureTwelve_referance/bloc/ref_bloc.dart';
 import '../featureTwelve_referance/bloc/ref_event.dart';
-import '../featureTwelve_referance/screen/ref_screen.dart';
 import '../featureTwo_objective/bloc/objective_bloc.dart';
 import '../featureTwo_objective/bloc/objective_event.dart';
 import '../featureTwo_objective/screen/objective_screen.dart';
@@ -49,87 +48,9 @@ class HomeContentDesktop extends StatefulWidget {
 }
 
 class _HomeContentDesktopState extends State<HomeContentDesktop> {
-  // final GlobalKey _one = GlobalKey();
-  //  final GlobalKey _two = GlobalKey();
-  //  final GlobalKey _three = GlobalKey();
-  // // final GlobalKey _four = GlobalKey();
-  // // final GlobalKey _five = GlobalKey();
-  // List<ShowCaseDataModel> showCaseDataModel = [];
-  //
-  // final scrollController = ScrollController();
   double left = 400, right = 400;
   @override
   void initState() {
-    // (WidgetsBinding.instance).addPostFrameCallback(
-    //               (_) => ShowCaseWidget.of(context)
-    //                   .startShowCase([_one, _two, _three,]),
-    //            );
-    //             showCaseDataModel = [
-    //               ShowCaseDataModel(
-    //                 sender: 'Medium',
-    //                 sub: 'Showcase View',
-    //                 msg: 'Check new showcase View',
-    //                 date: '1 May',
-    //                 isUnread: false,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Quora',
-    //                 sub: 'New Question for you',
-    //                 msg: 'Hi, There is new question for you',
-    //                 date: '2 May',
-    //                 isUnread: true,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Google',
-    //                 sub: 'Flutter 1.5',
-    //                 msg: 'We have launched Flutter 1.5',
-    //                 date: '3 May',
-    //                 isUnread: false,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Github',
-    //                 sub: 'Showcase View',
-    //                 msg: 'New star on your showcase view.',
-    //                 date: '4 May ',
-    //                 isUnread: true,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Simform',
-    //                 sub: 'Credit card Plugin',
-    //                 msg: 'Check out our credit card plugin',
-    //                 date: '5 May',
-    //                 isUnread: false,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Flutter',
-    //                 sub: 'Flutter is Future',
-    //                 msg: 'Flutter launched for Web',
-    //                 date: '6 May',
-    //                 isUnread: true,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Medium',
-    //                 sub: 'Showcase View',
-    //                 msg: 'Check new showcase View',
-    //                 date: '7 May ',
-    //                 isUnread: false,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Simform',
-    //                 sub: 'Credit card Plugin',
-    //                 msg: 'Check out our credit card plugin',
-    //                 date: '8 May',
-    //                 isUnread: true,
-    //               ),
-    //               ShowCaseDataModel(
-    //                 sender: 'Flutter',
-    //                 sub: 'Flutter is Future',
-    //                 msg: 'Flutter launched for Web',
-    //                 date: '9 May',
-    //                 isUnread: false,
-    //               ),
-    //             ];
-    // TODO: implement initState
     super.initState();
     BlocProvider.of<IntroBloc>(context).add(GetData());
     BlocProvider.of<ObjectiveBloc>(context).add(GetDataObj());
@@ -154,23 +75,18 @@ class _HomeContentDesktopState extends State<HomeContentDesktop> {
         left = 400.0;
         right = 400.0;
       });
-      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
     }
     if (MediaQuery.of(context).size.width < 1200) {
       setState(() {
         left = 300.0;
         right = 300.0;
       });
-
-      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
     }
     if (MediaQuery.of(context).size.width < 1000) {
       setState(() {
         left = 150.0;
         right = 150.0;
       });
-
-      //return Text('Width : ' + MediaQuery.of(context).size.width.toString());
     }
     if (MediaQuery.of(context).size.width < 800) {
       setState(() {
@@ -179,146 +95,157 @@ class _HomeContentDesktopState extends State<HomeContentDesktop> {
       });
     }
     return Scaffold(
-        body: Center(
-      child: SingleChildScrollView(
-        //controller: scrollController,
-        child: Padding(
-          padding:
-              EdgeInsets.only(top: 20.0, bottom: 20, left: left, right: right),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            //padding: const EdgeInsets.all(20.0),
-            //shrinkWrap: true,
-            children: [
-              IntroScreen(),
-              SizedBox(height: 30),
-              // Text(
-              //   'INTRODUCTION AND OBJECTIVE',
-              //   style: AppTextStyle.highlightsTextStyle(),
-              // ),
-              // AppDivider(),
-              //SizedBox(height: 10),
-              ObjectiveScreen(),
-              SizedBox(height: 30),
-              Text(
-                'WORK EXPERIENCE',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              WorkScreen(),
-              SizedBox(height: 30),
-              Text(
-                'APP IN GOOGLE PLAY & APP STORE',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              MyProject(),
-              SizedBox(height: 30),
-              Row(
-                children: [
-                  Text(
-                    'TECHNICAL SKILLS',
-                    style: AppTextStyle.highlightsTextStyle(),
+      body: FutureBuilder(
+         future: FireStoreDataBase().getData(),
+         builder: (context, snapshot) {
+           print(snapshot.data.toString());
+           if (snapshot.hasError) {
+             return const Text(
+               "Something went wrong",
+             );
+           }
+           if (snapshot.connectionState == ConnectionState.done) {
+             return Center(
+                child: SingleChildScrollView(
+                  //controller: scrollController,
+                  child: Padding(
+                    padding:
+                        EdgeInsets.only(top: 20.0, bottom: 20, left: left, right: right),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      //padding: const EdgeInsets.all(20.0),
+                      //shrinkWrap: true,
+                      children: [
+                        IntroScreen(),
+                        SizedBox(height: 30),
+                        ObjectiveScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'WORK EXPERIENCE',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        WorkScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'APP IN GOOGLE PLAY & APP STORE',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        MyProject(),
+                        SizedBox(height: 30),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'TECHNICAL SKILLS',
+                              style: AppTextStyle.highlightsTextStyle(),
+                            ),
+                            const SizedBox(height: 10),
+                            Wrap(
+                              spacing: 10,
+                              runSpacing: 10,
+                              children: [
+                                _buildSkillChip(
+                                  icon: Icons.flutter_dash,
+                                  label: 'Flutter',
+                                  color: Colors.blue,
+                                ),
+                                _buildSkillChip(
+                                  icon: Icons.android,
+                                  label: 'Kotlin Jetpack',
+                                  color: Colors.green,
+                                ),
+                                _buildSkillChip(
+                                  icon: Icons.apple,
+                                  label: 'SwiftUI',
+                                  color: Colors.black,
+                                ),
+                                _buildSkillChip(
+                                  icon: Icons.code,
+                                  label: 'Node.js',
+                                  color: Colors.green.shade800,
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 30),
+                        FluScreen(),
+                        //OtherScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'PROJECTS',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        ProjScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'PARTICIPATION IN TRAINING',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        TrainScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'ORGANISATIONAL CERTIFICATE',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        CerScreen(),
+                        SizedBox(height: 30),
+                        Text(
+                          'EDUCATION QUALIFICATION',
+                          style: AppTextStyle.highlightsTextStyle(),
+                        ),
+                        AppDivider(),
+                        SizedBox(height: 10),
+                        EduScreen(),
+                        // SizedBox(height: 30),
+                        // Text(
+                        //   'PERSONAL DETAILS',
+                        //   style: AppTextStyle.highlightsTextStyle(),
+                        // ),
+                        // AppDivider(),
+                        // SizedBox(height: 10),
+                        // PerScreen(),
+                        // SizedBox(height: 30),
+                        // Text(
+                        //   'REFERENCE',
+                        //   style: AppTextStyle.highlightsTextStyle(),
+                        // ),
+                        // AppDivider(),
+                        // SizedBox(height: 10),
+                        // RefScreen(),
+                        SizedBox(height: 30),
+                        // Text(
+                        //   'CERTIFICATION',
+                        //   style: AppTextStyle.highlightsTextStyle(),
+                        // ),
+                        //AppDivider(),
+                        SizedBox(height: 10),
+                        CertScreen(),
+                        SizedBox(height: 30),
+                        // Text(
+                        //     'Info: This portfolio made with Flutter, Dart and Firebase. I look forward to the opportunity to discuss my qualifications in more detail. Please feel free to contact me at [phone number] or [email address]. Thank you for reviewing my portfolio.')
+                      ],
+                    ),
                   ),
-                  Spacer(),
-                  _buildSkillChip(
-                    icon: Icons.flutter_dash,
-                    label: 'Flutter',
-                    color: Colors.blue,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.android,
-                    label: 'Kotlin Jetpack',
-                    color: Colors.green,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.apple,
-                    label: 'SwiftUI',
-                    color: Colors.black,
-                  ),
-                  SizedBox(width: 10),
-                  _buildSkillChip(
-                    icon: Icons.code,
-                    label: 'Node.js',
-                    color: Colors.green.shade800,
-                  ),
-                ],
-              ),
-              AppDivider(),
-              SizedBox(height: 30),
-              FluScreen(),
-              //OtherScreen(),
-              SizedBox(height: 30),
-              Text(
-                'PROJECTS',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              ProjScreen(),
-              SizedBox(height: 30),
-              Text(
-                'PARTICIPATION IN TRAINING',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              TrainScreen(),
-              SizedBox(height: 30),
-              Text(
-                'ORGANISATIONAL CERTIFICATE',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              CerScreen(),
-              SizedBox(height: 30),
-              Text(
-                'EDUCATION QUALIFICATION',
-                style: AppTextStyle.highlightsTextStyle(),
-              ),
-              AppDivider(),
-              SizedBox(height: 10),
-              EduScreen(),
-              // SizedBox(height: 30),
-              // Text(
-              //   'PERSONAL DETAILS',
-              //   style: AppTextStyle.highlightsTextStyle(),
-              // ),
-              // AppDivider(),
-              // SizedBox(height: 10),
-              // PerScreen(),
-              // SizedBox(height: 30),
-              // Text(
-              //   'REFERENCE',
-              //   style: AppTextStyle.highlightsTextStyle(),
-              // ),
-              // AppDivider(),
-              // SizedBox(height: 10),
-              // RefScreen(),
-              SizedBox(height: 30),
-              // Text(
-              //   'CERTIFICATION',
-              //   style: AppTextStyle.highlightsTextStyle(),
-              // ),
-              //AppDivider(),
-              SizedBox(height: 10),
-              CertScreen(),
-              SizedBox(height: 30),
-              // Text(
-              //     'Info: This portfolio made with Flutter, Dart and Firebase. I look forward to the opportunity to discuss my qualifications in more detail. Please feel free to contact me at [phone number] or [email address]. Thank you for reviewing my portfolio.')
-            ],
-          ),
-        ),
-      ),
-    )
-        // )
-        );
+                ),
+              );
+           }
+           return const Center(child: CircularProgressIndicator());
+         },
+       )
+      );
   }
 }
 
